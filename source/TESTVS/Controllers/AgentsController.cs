@@ -52,10 +52,10 @@ namespace TESTVS.Controllers
             {
                 db.Agents.Add(agent);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Orders");
             }
 
-            return View(agent);
+            return RedirectToAction("Index","Orders");
         }
 
         // GET: Agents/Edit/5

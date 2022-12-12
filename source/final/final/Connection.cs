@@ -10,7 +10,7 @@ namespace final
 {
     class Connection
     {
-        private static string stringConnection = @"Data Source=LAPTOP-O97RL44F;Initial Catalog=WEBMVC; Integrated Security=True";
+        private static string stringConnection = @"Data Source=DESKTOP-P5A8F2J\SQLEXPRESS;Initial Catalog=WEBMVC; Integrated Security=True";
         public static SqlConnection getConnection()
         {
             return new SqlConnection(stringConnection);

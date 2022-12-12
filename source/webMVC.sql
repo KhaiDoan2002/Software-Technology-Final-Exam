@@ -116,17 +116,3 @@ select * from Agent
 select * from Orders
 select * from Imports
 select * from warehouse
-
-delete from Goods 
-delete from Manufacturer
-delete from Orders 
-delete from Imports
-delete from warehouse
-
-delete from Accountant
-delete from Agent 
-drop table warehouse
-drop table Goods
-drop table Manufacturer
-drop table Imports 
-drop table Orders

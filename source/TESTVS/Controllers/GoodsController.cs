@@ -182,12 +182,19 @@ namespace TESTVS.Controllers
         [HttpPost]
         public ActionResult ConfirmOrder(Order o)
         {
+            o.OrderDate = DateTime.Today;
             Agent a = db.Agents.Find(o.AgentId);
             if (a == null)
             {
                 return RedirectToAction("Create", "Agents");
             }
-            string stringConnection = @"Data Source=LAPTOP-O97RL44F;Initial Catalog=WEBMVC; Integrated Security=True";
+
+            if (a.AgentPassword != o.AgentPassword)
+            {
+                return RedirectToAction("EnterAgent", o);
+            }
+
+            string stringConnection = @"Data Source=DESKTOP-P5A8F2J\SQLEXPRESS;Initial Catalog=WEBMVC; Integrated Security=True";
             SqlConnection con = new SqlConnection(stringConnection);
             SqlCommand sqlCommand;
 
@@ -196,19 +203,20 @@ namespace TESTVS.Controllers
             Good g = db.Goods.Find(o.GoodsId, o.GoodsUnit);
 
             g = db.Goods.Find(o.GoodsId, o.GoodsUnit);
-            o.TotalPrice = g.GoodsPrice * o.Quantity;
-            o.deliveryState = "undelivered";
-            o.OrderDate = DateTime.Today;
-            db.Orders.Add(o);
-            db.SaveChanges();
+            //o.TotalPrice = g.GoodsPrice * o.Quantity;
+            //o.deliveryState = "undelivered";
+            //o.OrderDate = DateTime.Today;
+            //db.Orders.Add(o);
+            //db.SaveChanges();
 
             if (g == null)
             {
                 return HttpNotFound();
             }
-
+            bool exist = db.Orders.Any(x => x.GoodsId == o.GoodsId && x.GoodsUnit == o.GoodsUnit && x.AgentId == o.AgentId && x.OrderDate == o.OrderDate);
+           
             Order temp = db.Orders.Find(o.AgentId,o.GoodsId,o.GoodsUnit,o.OrderDate);
-            if (temp != null && temp.GoodsUnit == o.GoodsUnit && temp.OrderDate == o.OrderDate && o.AgentId == temp.AgentId)
+            if (temp != null)
             {
                 
                 con.Open();
