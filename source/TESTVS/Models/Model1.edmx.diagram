@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e4c29cd3bec34328896a4ff6c9d09934" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="WEBMVCModel.Accountant" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBMVCModel.Agent" Width="1.5" PointX="6" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBMVCModel.Good" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBMVCModel.Import" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBMVCModel.Manufacturer" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBMVCModel.Order" Width="1.5" PointX="8.25" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WEBMVCModel.warehouse" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <AssociationConnector Association="WEBMVCModel.FK__Imports__Account__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBMVCModel.FK__Orders__AgentId__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBMVCModel.FK__Goods__Manufactu__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBMVCModel.FK__Imports__1AD3FDA4" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBMVCModel.FK__Orders__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="WEBMVCModel.FK__warehouse__2180FB33" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

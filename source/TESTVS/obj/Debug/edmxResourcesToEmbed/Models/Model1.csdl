@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WEBMVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Accountant">
+    <Key>
+      <PropertyRef Name="AccountantId" />
+    </Key>
+    <Property Name="AccountantId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AccountantName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountantPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AccountantAge" Type="Int32" />
+    <Property Name="AccountantAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Imports" Relationship="Self.FK__Imports__Account__19DFD96B" FromRole="Accountant" ToRole="Imports" />
+  </EntityType>
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="AgentId" />
+    </Key>
+    <Property Name="AgentId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AgentName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AgentPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="AgentAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__AgentId__1DB06A4F" FromRole="Agent" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Good">
+    <Key>
+      <PropertyRef Name="GoodsId" />
+      <PropertyRef Name="GoodsUnit" />
+    </Key>
+    <Property Name="GoodsId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GoodsPrice" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="ManufacturerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Manufacturer" Relationship="Self.FK__Goods__Manufactu__17036CC0" FromRole="Goods" ToRole="Manufacturer" />
+    <NavigationProperty Name="Imports" Relationship="Self.FK__Imports__1AD3FDA4" FromRole="Goods" ToRole="Imports" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__1EA48E88" FromRole="Goods" ToRole="Orders" />
+    <NavigationProperty Name="warehouse" Relationship="Self.FK__warehouse__2180FB33" FromRole="Goods" ToRole="warehouse" />
+  </EntityType>
+  <EntityType Name="Import">
+    <Key>
+      <PropertyRef Name="AccountantId" />
+      <PropertyRef Name="GoodsId" />
+      <PropertyRef Name="GoodsUnit" />
+      <PropertyRef Name="ImportDate" />
+    </Key>
+    <Property Name="AccountantId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="ImportDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Accountant" Relationship="Self.FK__Imports__Account__19DFD96B" FromRole="Imports" ToRole="Accountant" />
+    <NavigationProperty Name="Good" Relationship="Self.FK__Imports__1AD3FDA4" FromRole="Imports" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="ManufacturerID" />
+    </Key>
+    <Property Name="ManufacturerID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ManufacturerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Goods" Relationship="Self.FK__Goods__Manufactu__17036CC0" FromRole="Manufacturer" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="AgentId" />
+      <PropertyRef Name="GoodsId" />
+      <PropertyRef Name="GoodsUnit" />
+      <PropertyRef Name="OrderDate" />
+    </Key>
+    <Property Name="AgentId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="TotalPrice" Type="Decimal" Precision="13" Scale="2" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="chargeState" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="deliveryState" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Agent" Relationship="Self.FK__Orders__AgentId__1DB06A4F" FromRole="Orders" ToRole="Agent" />
+    <NavigationProperty Name="Good" Relationship="Self.FK__Orders__1EA48E88" FromRole="Orders" ToRole="Goods" />
+  </EntityType>
+  <EntityType Name="warehouse">
+    <Key>
+      <PropertyRef Name="GoodsId" />
+      <PropertyRef Name="GoodsUnit" />
+    </Key>
+    <Property Name="GoodsId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="GoodsUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <NavigationProperty Name="Good" Relationship="Self.FK__warehouse__2180FB33" FromRole="warehouse" ToRole="Goods" />
+  </EntityType>
+  <Association Name="FK__Imports__Account__19DFD96B">
+    <End Role="Accountant" Type="Self.Accountant" Multiplicity="1" />
+    <End Role="Imports" Type="Self.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Accountant">
+        <PropertyRef Name="AccountantId" />
+      </Principal>
+      <Dependent Role="Imports">
+        <PropertyRef Name="AccountantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__AgentId__1DB06A4F">
+    <End Role="Agent" Type="Self.Agent" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Agent">
+        <PropertyRef Name="AgentId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="AgentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Goods__Manufactu__17036CC0">
+    <End Role="Manufacturer" Type="Self.Manufacturer" Multiplicity="0..1" />
+    <End Role="Goods" Type="Self.Good" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="ManufacturerID" />
+      </Principal>
+      <Dependent Role="Goods">
+        <PropertyRef Name="ManufacturerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Imports__1AD3FDA4">
+    <End Role="Goods" Type="Self.Good" Multiplicity="1" />
+    <End Role="Imports" Type="Self.Import" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsId" />
+        <PropertyRef Name="GoodsUnit" />
+      </Principal>
+      <Dependent Role="Imports">
+        <PropertyRef Name="GoodsId" />
+        <PropertyRef Name="GoodsUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Orders__1EA48E88">
+    <End Role="Goods" Type="Self.Good" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsId" />
+        <PropertyRef Name="GoodsUnit" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="GoodsId" />
+        <PropertyRef Name="GoodsUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__warehouse__2180FB33">
+    <End Role="Goods" Type="Self.Good" Multiplicity="1" />
+    <End Role="warehouse" Type="Self.warehouse" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Goods">
+        <PropertyRef Name="GoodsId" />
+        <PropertyRef Name="GoodsUnit" />
+      </Principal>
+      <Dependent Role="warehouse">
+        <PropertyRef Name="GoodsId" />
+        <PropertyRef Name="GoodsUnit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WEBMVCEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accountants" EntityType="Self.Accountant" />
+    <EntitySet Name="Agents" EntityType="Self.Agent" />
+    <EntitySet Name="Goods" EntityType="Self.Good" />
+    <EntitySet Name="Imports" EntityType="Self.Import" />
+    <EntitySet Name="Manufacturers" EntityType="Self.Manufacturer" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="warehouses" EntityType="Self.warehouse" />
+    <AssociationSet Name="FK__Imports__Account__19DFD96B" Association="Self.FK__Imports__Account__19DFD96B">
+      <End Role="Accountant" EntitySet="Accountants" />
+      <End Role="Imports" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__AgentId__1DB06A4F" Association="Self.FK__Orders__AgentId__1DB06A4F">
+      <End Role="Agent" EntitySet="Agents" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Goods__Manufactu__17036CC0" Association="Self.FK__Goods__Manufactu__17036CC0">
+      <End Role="Manufacturer" EntitySet="Manufacturers" />
+      <End Role="Goods" EntitySet="Goods" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Imports__1AD3FDA4" Association="Self.FK__Imports__1AD3FDA4">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Imports" EntitySet="Imports" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Orders__1EA48E88" Association="Self.FK__Orders__1EA48E88">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__warehouse__2180FB33" Association="Self.FK__warehouse__2180FB33">
+      <End Role="Goods" EntitySet="Goods" />
+      <End Role="warehouse" EntitySet="warehouses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

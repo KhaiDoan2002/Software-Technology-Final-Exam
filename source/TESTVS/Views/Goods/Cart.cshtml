@@ -1,0 +1,57 @@
+﻿@model IEnumerable<TESTVS.Models.Good>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Cart</h2>
+
+<p>
+    @Html.ActionLink("Back to list", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodsId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodsName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodsPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GoodsUnit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Manufacturer.ManufacturerName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.GoodsId)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodsName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodsPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoodsUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer.ManufacturerName)
+            </td>
+            <td>
+                @Html.ActionLink("Order", "Order", new { id = item.GoodsId, unit = item.GoodsUnit })
+            </td>
+        </tr>
+    }
+
+</table>
+
