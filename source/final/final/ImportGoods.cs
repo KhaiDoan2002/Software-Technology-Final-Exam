@@ -72,5 +72,10 @@ namespace final
             }
             
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -55,106 +55,111 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(108, 54);
+            this.label1.Location = new System.Drawing.Point(81, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 16);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "AccountantID";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(108, 90);
+            this.label3.Location = new System.Drawing.Point(81, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 16);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "GoodsID";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(106, 119);
+            this.label4.Location = new System.Drawing.Point(80, 97);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 16);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "GoodsUnit";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(108, 150);
+            this.label5.Location = new System.Drawing.Point(81, 122);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 16);
+            this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Quantity";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(108, 181);
+            this.label6.Location = new System.Drawing.Point(81, 147);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 5;
             this.label6.Text = "ImportDate";
             // 
             // accountantid
             // 
-            this.accountantid.Location = new System.Drawing.Point(232, 50);
-            this.accountantid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.accountantid.Location = new System.Drawing.Point(174, 41);
+            this.accountantid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.accountantid.Name = "accountantid";
-            this.accountantid.Size = new System.Drawing.Size(243, 22);
+            this.accountantid.Size = new System.Drawing.Size(183, 20);
             this.accountantid.TabIndex = 6;
             // 
             // goodsid
             // 
-            this.goodsid.Location = new System.Drawing.Point(232, 86);
-            this.goodsid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.goodsid.Location = new System.Drawing.Point(174, 70);
+            this.goodsid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.goodsid.Name = "goodsid";
-            this.goodsid.Size = new System.Drawing.Size(243, 22);
+            this.goodsid.Size = new System.Drawing.Size(183, 20);
             this.goodsid.TabIndex = 8;
             // 
             // goodsunit
             // 
-            this.goodsunit.Location = new System.Drawing.Point(232, 121);
-            this.goodsunit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.goodsunit.Location = new System.Drawing.Point(174, 98);
+            this.goodsunit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.goodsunit.Name = "goodsunit";
-            this.goodsunit.Size = new System.Drawing.Size(243, 22);
+            this.goodsunit.Size = new System.Drawing.Size(183, 20);
             this.goodsunit.TabIndex = 9;
             // 
             // quantity
             // 
-            this.quantity.Location = new System.Drawing.Point(232, 150);
-            this.quantity.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.quantity.Location = new System.Drawing.Point(174, 122);
+            this.quantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(243, 22);
+            this.quantity.Size = new System.Drawing.Size(183, 20);
             this.quantity.TabIndex = 10;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(232, 181);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(174, 147);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(243, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(183, 20);
             this.dateTimePicker1.TabIndex = 11;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(493, 222);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(370, 180);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(879, 295);
+            this.dataGridView1.Size = new System.Drawing.Size(659, 240);
             this.dataGridView1.TabIndex = 12;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(232, 222);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(174, 180);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 27);
+            this.button1.Size = new System.Drawing.Size(77, 22);
             this.button1.TabIndex = 13;
             this.button1.Text = "Import";
             this.button1.UseVisualStyleBackColor = true;
@@ -164,71 +169,70 @@
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 256);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(11, 208);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(411, 287);
+            this.dataGridView2.Size = new System.Drawing.Size(308, 233);
             this.dataGridView2.TabIndex = 14;
             // 
             // dataGridView3
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(657, 37);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView3.Location = new System.Drawing.Point(493, 30);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(715, 149);
+            this.dataGridView3.Size = new System.Drawing.Size(536, 121);
             this.dataGridView3.TabIndex = 15;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(653, 18);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(490, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 16);
+            this.label7.Size = new System.Drawing.Size(93, 13);
             this.label7.TabIndex = 16;
-            this.label7.Text = "Manufacturer";
+            this.label7.Text = "Contracted Goods";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(489, 203);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(367, 165);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 16);
+            this.label8.Size = new System.Drawing.Size(36, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "Import";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 238);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(10, 193);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 16);
+            this.label9.Size = new System.Drawing.Size(67, 13);
             this.label9.TabIndex = 18;
             this.label9.Text = "Ware House";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::final.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(81, 66);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 54);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // ImportGoods
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1371, 601);
+            this.ClientSize = new System.Drawing.Size(1028, 488);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -247,7 +251,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ImportGoods";
             this.Text = "ImportGoods";
             this.Load += new System.EventHandler(this.ImportGoods_Load);
